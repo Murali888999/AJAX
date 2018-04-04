@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<body style="background-color:yellow">
+        <h2>The XMLHttpRequest Object</h2>
+         <p id="test"></p>
+ <script>
+    var xhttp, xmlDoc, x, y, i;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function ()
+    {
+        if (this.readyState == 4 && this.status == 200)
+        {
+            xmlDoc = this.responseXML;
+            x = "";
+            y = xmlDoc.getElementsByTagName("ARTIST");
+                for (i = 0; i < y.length; i++)
+                    {
+                        x = x + y[i].childNodes[0].nodeValue + "<br>";
+                     }
+             document.getElementById("test").innerHTML = x;
+            }
+        };
+        xhttp.open("GET", "catalog.xml", true);
+        xhttp.send();
+ </script>
+</body>
+</html>

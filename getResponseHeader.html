@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <h1>getResponseHeader method</h1>
+    <p id="test">getResponseHeader methods return specific header info like, lenght,last-modified,server-type,contentt-type. </p>
+    <script>
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange=function()
+        {
+            document.getElementById("test").innerHTML = xhttp.getResponseHeader("content-type");
+        }
+        xhttp.open("get", "abc.txt", true);
+        xhttp.send();
+    </script>
+</body>
+</html>

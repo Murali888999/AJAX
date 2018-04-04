@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body style="background-color:midnightblue">
+    <h2 style="color:white">xmlhttprequest using post()</h2>
+    <button type="button" onclick="func()">ToGetData</button>
+    <p style="color:limegreen" id="data"></p>
+    <script>
+        function func()
+        {
+            var xmldata = new XMLHttpRequest();
+            xmldata.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("data").innerHTML = this.responseText;
+                }
+            };
+            xmldata.open("POST", "abc.txt", true);
+            xmldata.send();
+        }
+    </script>
+</body>
+</html>

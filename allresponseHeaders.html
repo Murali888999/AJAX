@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <h1>xmlhttpRequest object</h1>
+    <p id="test">getAllResponseHeader method return all the header info of resource like..length,server-type,content-type..</p>
+    <script>
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("test").innerHTML = xhttp.getAllResponseHeaders();
+            }
+        };
+        xhttp.open("Get", "abc.txt", true);
+        xhttp.send();
+    </script>
+</body>
+</html>
